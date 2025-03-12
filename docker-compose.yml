@@ -80,7 +80,7 @@ services:
     labels:
       logs: "promtail"
     healthcheck:
-      test: curl --fail http://${EC2_PUBLIC_IP}:8080/health || exit 1
+      test: curl --fail http://localhost:8080/health || exit 1
       interval: 5s
       retries: 3
       start_period: 5s
@@ -327,7 +327,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka0:29092,PLAINTEXT_HOST://${EC2_PUBLIC_IP}:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka0:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
