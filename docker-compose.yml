@@ -165,7 +165,7 @@ services:
       - HYPERSWITCH_PUBLISHABLE_KEY=placeholder_publishable_key
       - HYPERSWITCH_SECRET_KEY=placeholder_api_key
       - HYPERSWITCH_SERVER_URL=http://${EC2_PUBLIC_IP}:8080
-      - HYPERSWITCH_SERVER_URL_FOR_DEMO_APP=http://hyperswitch-server:8080
+      - HYPERSWITCH_SERVER_URL_FOR_DEMO_APP=http://${EC2_PUBLIC_IP}:8080
       - HYPERSWITCH_CLIENT_URL=http://${EC2_PUBLIC_IP}:9050
       - SELF_SERVER_URL=http://${EC2_PUBLIC_IP}:5252
       - SDK_ENV=local
